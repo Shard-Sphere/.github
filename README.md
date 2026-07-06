@@ -8,7 +8,7 @@ Use serviços gratuitos (GitHub, Google Drive, S3, Dropbox, MEGA, WebDAV…) par
 
 ## A ideia
 
-Serviços gratuitos oferecem armazenamento de sobra — mas espalhado, sem privacidade e sem controle real. O ShardSphere vira o jogo: usa esses serviços pra você **montar os seus próprios discos**, na capacidade que quiser, e combinar tudo num disco virtual só. **Privacidade e segurança são o núcleo do produto.**
+Cada serviço gratuito te dá **pouco** espaço, isolado e sem controle. O ShardSphere junta vários deles num **disco só, do tamanho que você quiser** — quanto mais contas você soma, maior o disco. **Privacidade e segurança são o núcleo do produto.**
 
 - **Discos dedicados.** Cada conta é um disco **inteiro** do ShardSphere — criada pra isso, não é "espaço que sobrou". Você junta quantos quiser.
 - **Fragmentado + espelhado (RAID 10).** Seus arquivos são cifrados no seu device (2SKD) e **quebrados em pedaços** que o sistema **espalha e replica** pelas suas contas — nenhuma conta sozinha tem o arquivo inteiro, nem consegue lê-lo. A **fragmentação** soma a capacidade das contas; a **cópia** garante que perder o acesso a uma conta não perde nada. É exatamente o RAID 10: espelho de fragmentos.
