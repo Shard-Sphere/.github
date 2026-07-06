@@ -2,7 +2,7 @@
 
 ### Fragmented. Encrypted. Unified.
 
-Use serviços de cloud (Google Drive, Dropbox, GitHub, GitLab, S3, MEGA, WebDAV…) para **construir os seus próprios discos** — do tamanho que você quiser — e junte tudo num **disco virtual único, cifrado e provadamente só seu**. O servidor nunca vê seus arquivos nem suas chaves: tudo acontece no seu navegador.
+Use serviços de cloud (Google Drive, Dropbox, GitHub, GitLab, MEGA, Backblaze B2…) para **construir os seus próprios discos** — do tamanho que você quiser — e junte tudo num **disco virtual único, cifrado e provadamente só seu**. O servidor nunca vê seus arquivos nem suas chaves: tudo acontece no seu navegador.
 
 ---
 
