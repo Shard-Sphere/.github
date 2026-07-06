@@ -2,13 +2,13 @@
 
 ### Fragmented. Encrypted. Unified.
 
-Use serviços gratuitos (GitHub, Google Drive, S3, Dropbox, MEGA, WebDAV…) para **construir os seus próprios discos** — do tamanho que você quiser — e junte tudo num **disco virtual único, cifrado e provadamente só seu**. O servidor nunca vê seus arquivos nem suas chaves: tudo acontece no seu navegador.
+Use serviços de cloud (Google Drive, Dropbox, GitHub, GitLab, S3, MEGA, WebDAV…) para **construir os seus próprios discos** — do tamanho que você quiser — e junte tudo num **disco virtual único, cifrado e provadamente só seu**. O servidor nunca vê seus arquivos nem suas chaves: tudo acontece no seu navegador.
 
 ---
 
 ## A ideia
 
-Cada serviço gratuito te dá **pouco** espaço, isolado e sem controle. O ShardSphere junta vários deles num **disco só, do tamanho que você quiser** — quanto mais contas você soma, maior o disco. **Privacidade e segurança são o núcleo do produto.**
+Cada serviço de cloud te dá **pouco** espaço, isolado e sem controle. O ShardSphere junta vários deles num **disco só, do tamanho que você quiser** — quanto mais contas você soma, maior o disco. **Privacidade e segurança são o núcleo do produto.**
 
 - **Discos dedicados.** Cada conta é um disco **inteiro** do ShardSphere — criada pra isso, não é "espaço que sobrou". Você junta quantos quiser.
 - **Fragmentado + espelhado (RAID 10).** Seus arquivos são cifrados no seu device (2SKD) e **quebrados em pedaços** que o sistema **espalha e replica** pelas suas contas — nenhuma conta sozinha tem o arquivo inteiro, nem consegue lê-lo. A **fragmentação** soma a capacidade das contas; a **cópia** garante que perder o acesso a uma conta não perde nada. É exatamente o RAID 10: espelho de fragmentos.
@@ -24,7 +24,7 @@ Cada serviço gratuito te dá **pouco** espaço, isolado e sem controle. O Shard
 Não é "mais um cloud". É um jeito diferente de pensar armazenamento:
 
 - 🔐 **Zero-knowledge de verdade.** A chave nasce e morre no seu navegador (2SKD: senha de desbloqueio + frase de 12 palavras). O backend jamais vê arquivo ou chave.
-- 🧩 **RAID por cima de contas grátis.** Monte a topologia num **builder visual**: `merge` soma capacidade, `replica` espelha pra redundância. Misture como quiser.
+- 🧩 **RAID por cima de serviços de cloud (Google Drive, Dropbox, GitHub, GitLab…).** Monte a topologia num **builder visual**: `merge` soma capacidade, `replica` espelha pra redundância. Misture como quiser.
 - ♻️ **Sobrevive a perder uma conta.** Perdeu o acesso a uma conta de uma réplica? O arquivo continua **íntegro e acessível** — o sistema lê os pedaços das cópias vivas e reconstrói na hora. Colocou uma conta nova no lugar? O **self-heal** repovoa ela a partir das cópias, sozinho, quando o sistema fica ocioso.
 - 🗂️ **Escala pra milhões de arquivos.** O índice não vive num JSON gigante: cada pasta é um objeto próprio, carregado sob demanda. Login instantâneo com 6 ou 5.000.000 de arquivos.
 - 💽 **O índice mora nos seus discos.** As listas de arquivo e os manifests são cifrados e gravados **nas suas próprias contas** (replicados) — não no backend. Caminho pra rodar **sem backend nenhum**.
@@ -38,7 +38,7 @@ flowchart LR
     RAID -->|merge = capacidade| M["contas A + B + C…"]
     RAID -->|replica = redundância| R["cópias espelhadas"]
     U -.->|"metadado cifrado (âncora)"| S["🗄️ Backend mínimo"]
-    M --> D[("💽 Suas contas grátis")]
+    M --> D[("💽 Suas contas de cloud")]
     R --> D
     D -.->|"índice cifrado também aqui"| D
 ```
@@ -105,7 +105,7 @@ Opcional. Ligou → depois de logar, o sistema pede um código do app autenticad
 
 ## 5. Montando os discos (topologia)
 
-Num **builder visual** você arrasta discos (cada um = uma conta grátis) e os agrupa:
+Num **builder visual** você arrasta discos (cada um = uma conta de um serviço de cloud) e os agrupa:
 
 - **`replica`** — espelha o mesmo pedaço em todos os discos do grupo → **redundância**.
 - **`merge`** — distribui os pedaços entre os grupos → **soma a capacidade**.
