@@ -8,13 +8,14 @@ Use serviços gratuitos (GitHub, Google Drive, S3, Dropbox, MEGA, WebDAV…) par
 
 ## A ideia
 
-Serviços gratuitos oferecem armazenamento de sobra — mas espalhado, sem privacidade e sem controle real. O ShardSphere vira o jogo: usa esses serviços pra você **montar os seus próprios discos**, na capacidade que quiser, e combinar tudo num disco virtual só.
+Serviços gratuitos oferecem armazenamento de sobra — mas espalhado, sem privacidade e sem controle real. O ShardSphere vira o jogo: usa esses serviços pra você **montar os seus próprios discos**, na capacidade que quiser, e combinar tudo num disco virtual só. **Privacidade e segurança são o núcleo do produto.**
 
-- **Discos dedicados.** Cada conta é um disco **inteiro** do ShardSphere — criada pra isso, não é "espaço que sobrou". Você junta quantos quiser, na topologia que montar.
-- **Privacidade e segurança são o núcleo do produto.** Tudo é cifrado no seu device (2SKD) **antes** de sair. Provedores e servidor só enxergam blocos aleatórios — matematicamente ilegíveis sem as suas chaves.
-- **Zero-knowledge, de verdade.** Suas chaves nascem e morrem no seu navegador. Ninguém além de você abre nada — nem nós.
+- **Discos dedicados.** Cada conta é um disco **inteiro** do ShardSphere — criada pra isso, não é "espaço que sobrou". Você junta quantos quiser.
+- **Fragmentado + espelhado (RAID 10).** Seus arquivos são cifrados no seu device (2SKD) e **quebrados em pedaços** que o sistema **espalha e replica** pelas suas contas — nenhuma conta sozinha tem o arquivo inteiro, nem consegue lê-lo. A **fragmentação** soma a capacidade das contas; a **cópia** garante que perder o acesso a uma conta não perde nada. É exatamente o RAID 10: espelho de fragmentos.
+- **Zero-knowledge.** O servidor guarda só metadado cifrado. Sem as suas chaves, é lixo aleatório.
+- **Autenticar ≠ acessar os dados.** O login do Google serve **só pra saber quem é você**. Abrir os arquivos exige as suas **camadas de cripto** — a **frase de 12 palavras** + a **senha de desbloqueio (PIN)** — que nunca saem do seu device. O Google identifica; só você decifra.
 
-> Não é usar a sobra de espaço de terceiros. É **construir o SEU armazenamento** — grande, redundante e privado — em cima de infraestrutura gratuita.
+> Você não confia num provedor. Você usa vários — cifrados, redundantes, sob seu controle.
 
 ---
 
