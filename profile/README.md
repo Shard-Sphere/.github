@@ -25,7 +25,7 @@ Não é "mais um cloud". É um jeito diferente de pensar armazenamento:
 
 - 🔐 **Zero-knowledge de verdade.** A chave nasce e morre no seu navegador (2SKD: senha de desbloqueio + frase de 12 palavras). O backend jamais vê arquivo ou chave.
 - 🧩 **RAID por cima de contas grátis.** Monte a topologia num **builder visual**: `merge` soma capacidade, `replica` espelha pra redundância. Misture como quiser.
-- ♻️ **Self-heal.** Perdeu acesso a uma conta de uma réplica? O sistema reconstrói os pedaços das cópias vivas, sozinho, quando fica ocioso.
+- ♻️ **Sobrevive a perder uma conta.** Perdeu o acesso a uma conta de uma réplica? O arquivo continua **íntegro e acessível** — o sistema lê os pedaços das cópias vivas e reconstrói na hora. Colocou uma conta nova no lugar? O **self-heal** repovoa ela a partir das cópias, sozinho, quando o sistema fica ocioso.
 - 🗂️ **Escala pra milhões de arquivos.** O índice não vive num JSON gigante: cada pasta é um objeto próprio, carregado sob demanda. Login instantâneo com 6 ou 5.000.000 de arquivos.
 - 💽 **O índice mora nos seus discos.** As listas de arquivo e os manifests são cifrados e gravados **nas suas próprias contas** (replicados) — não no backend. Caminho pra rodar **sem backend nenhum**.
 - 🖼️ **Labels de imagem por IA, no seu device.** CLIP roda local (nada sai). Crie labels próprios por exemplo ("Lory") — se não reconhece, cai num genérico; se não tem certeza, não rotula.
