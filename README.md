@@ -2,19 +2,19 @@
 
 ### Fragmented. Encrypted. Unified.
 
-Junte várias contas de serviços grátis (GitHub, Google Drive, S3, Dropbox, MEGA, WebDAV…) e transforme em **um disco virtual único, cifrado e 100% seu**. O servidor nunca vê seus arquivos nem suas chaves — tudo acontece no seu navegador.
+Use serviços gratuitos (GitHub, Google Drive, S3, Dropbox, MEGA, WebDAV…) para **construir os seus próprios discos** — do tamanho que você quiser — e junte tudo num **disco virtual único, cifrado e provadamente só seu**. O servidor nunca vê seus arquivos nem suas chaves: tudo acontece no seu navegador.
 
 ---
 
 ## A ideia
 
-A filosofia é simples: **você já tem gigabytes espalhados em contas grátis** que nunca usa. O ShardSphere costura essas contas numa topologia estilo RAID e as apresenta como **um disco só**.
+Serviços gratuitos oferecem armazenamento de sobra — mas espalhado, sem privacidade e sem controle real. O ShardSphere vira o jogo: usa esses serviços pra você **montar os seus próprios discos**, na capacidade que quiser, e combinar tudo num disco virtual só.
 
-- **Login** pela sua conta **Google** (nada de senha própria pra decorar).
-- Seus arquivos são **cifrados no seu device (2SKD)** e **quebrados em pedaços** espalhados pelas suas contas — nenhuma conta sozinha tem o arquivo inteiro, nem consegue lê-lo.
-- **Zero-knowledge:** o servidor guarda só metadado cifrado. Sem suas chaves, é lixo aleatório.
+- **Discos dedicados.** Cada conta é um disco **inteiro** do ShardSphere — criada pra isso, não é "espaço que sobrou". Você junta quantos quiser, na topologia que montar.
+- **Privacidade e segurança são o núcleo do produto.** Tudo é cifrado no seu device (2SKD) **antes** de sair. Provedores e servidor só enxergam blocos aleatórios — matematicamente ilegíveis sem as suas chaves.
+- **Zero-knowledge, de verdade.** Suas chaves nascem e morrem no seu navegador. Ninguém além de você abre nada — nem nós.
 
-> Você não confia num provedor. Você usa vários — cifrados, redundantes, sob seu controle.
+> Não é usar a sobra de espaço de terceiros. É **construir o SEU armazenamento** — grande, redundante e privado — em cima de infraestrutura gratuita.
 
 ---
 
