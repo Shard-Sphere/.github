@@ -51,21 +51,9 @@ flowchart LR
 
 ## 1. Cadastro & login
 
-Login é **só** pela conta Google (Firebase Authentication). O backend confirma o token do Google e cria/liga a sua conta interna. Primeiro acesso exige um **convite** (single-use) — sistema fechado.
+O Google entra **só pra gerenciar o login** — confirmar quem você é, e nada mais. Primeiro acesso exige um **convite** (single-use); o backend liga a sua identidade do Google a uma conta interna e devolve uma sessão.
 
-```mermaid
-sequenceDiagram
-    participant N as Navegador
-    participant G as Google (Firebase)
-    participant B as Backend
-    N->>G: entrar com Google
-    G-->>N: id_token
-    N->>B: POST /auth/google { idToken, convite? }
-    B->>B: verifica token (chave pública) + convite
-    B-->>N: sessão (JWT) + lista de blobs
-```
-
-O backend nunca guarda senha — a identidade é do Google; a **cripto** é outra camada, só sua (próximo bloco).
+O ponto importante: **os seus segredos de cripto nunca passam por aqui.** A frase de 12 palavras e a senha de desbloqueio **não vão pro backend, nem pro Google, nem pra lugar nenhum** — nascem e ficam no seu navegador. O Google sabe que é você; **ninguém sabe como abrir os seus arquivos**. Autenticar é uma camada; decifrar é outra, totalmente sua (próximo bloco).
 
 **Arquivos relacionados:** `server · src/auth/*` · `front · core/firebase.ts`, `core/auth/*`
 
