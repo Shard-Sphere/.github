@@ -66,7 +66,7 @@ sequenceDiagram
 
 O backend nunca guarda senha — a identidade é do Google; a **cripto** é outra camada, só sua (próximo bloco).
 
-**Arquivos relacionados:** `server · src/auth/*` · `front · core/firebase.ts`, `core/auth/*` · [SHARDSPHERE-FLOWS.md](../SHARDSPHERE-FLOWS.md) §2
+**Arquivos relacionados:** `server · src/auth/*` · `front · core/firebase.ts`, `core/auth/*` · [SHARDSPHERE-FLOWS.md](SHARDSPHERE-FLOWS.md) §2
 
 ## 2. Suas chaves (2SKD)
 
@@ -89,7 +89,7 @@ flowchart LR
     K --> V["🔓 abre o vault cifrado"]
 ```
 
-**Arquivos relacionados:** `front · core/crypto/vault-key.ts`, `core/recovery-phrase/*` · [SHARDSPHERE-FLOWS.md](../SHARDSPHERE-FLOWS.md) §2, §4
+**Arquivos relacionados:** `front · core/crypto/vault-key.ts`, `core/recovery-phrase/*` · [SHARDSPHERE-FLOWS.md](SHARDSPHERE-FLOWS.md) §2, §4
 
 ## 3. Segurança no navegador
 
@@ -131,7 +131,7 @@ flowchart TD
     R2 --> Dd["💽 B2"] & E["💽 Koofr"]
 ```
 
-**Arquivos relacionados:** `front · core/placement.ts`, `core/raid*.ts`, `presenter/components/sidebar/*` · [SHARDSPHERE-FLOWS.md](../SHARDSPHERE-FLOWS.md) §7
+**Arquivos relacionados:** `front · core/placement.ts`, `core/raid*.ts`, `presenter/components/sidebar/*` · [SHARDSPHERE-FLOWS.md](SHARDSPHERE-FLOWS.md) §7
 
 ## 6. Enviando um arquivo
 
@@ -149,7 +149,7 @@ flowchart LR
 2. O **merge** manda cada chunk pra um ramo; a **replica** copia em todos os discos do ramo.
 3. Nenhuma conta tem o arquivo inteiro. Perder o acesso a uma conta de uma réplica não perde o arquivo.
 
-**Arquivos relacionados:** `front · core/pipeline*.ts`, `core/raid-put.ts`, `core/crypto/*` · [WALKTHROUGH-60MB.md](../WALKTHROUGH-60MB.md) *(passo a passo com os JSONs)*
+**Arquivos relacionados:** `front · core/pipeline*.ts`, `core/raid-put.ts`, `core/crypto/*` · [WALKTHROUGH-60MB.md](WALKTHROUGH-60MB.md) *(passo a passo com os JSONs)*
 
 ## 7. O índice — onde fica o "mapa"
 
@@ -167,7 +167,7 @@ flowchart TD
 
 O JSON pesado do índice **saiu do banco** e foi pros discos. O backend só segura a âncora com as credenciais — o mínimo pra bootstrap.
 
-**Arquivos relacionados:** `front · core/folder-store.ts`, `core/manifest-store.ts`, `core/index-driver.ts` · [0001-index-scale.md](../0001-index-scale.md)
+**Arquivos relacionados:** `front · core/folder-store.ts`, `core/manifest-store.ts`, `core/index-driver.ts` · [0001-index-scale.md](0001-index-scale.md)
 
 ## 8. Baixar & self-heal
 
@@ -181,7 +181,7 @@ Se um disco falhou na escrita, vira um **hint** (fila cifrada e durável); quand
 
 Um link temporário pra quem **não tem conta**. Você re-cifra os arquivos com uma **chave só daquele link**, o backend guarda numa staging (não expõe seus discos), e serve o conteúdo por tempo limitado. Vencido → apagado no próximo acesso.
 
-**Arquivos relacionados:** `server · src/share/*` · `front · components/share-dialog.tsx` · [SHARDSPHERE-FLOWS.md](../SHARDSPHERE-FLOWS.md) §25
+**Arquivos relacionados:** `server · src/share/*` · `front · components/share-dialog.tsx` · [SHARDSPHERE-FLOWS.md](SHARDSPHERE-FLOWS.md) §25
 
 ## 10. Labels de imagem (IA, no seu device)
 
@@ -197,7 +197,7 @@ flowchart LR
     C2 -->|não| L3["— sem label"]
 ```
 
-**Arquivos relacionados:** `front · ai/*`, `core/labels-store.ts`, `presenter/routes/labels.tsx` · [0002-ai-image-labels.md](../0002-ai-image-labels.md)
+**Arquivos relacionados:** `front · ai/*`, `core/labels-store.ts`, `presenter/routes/labels.tsx` · [0002-ai-image-labels.md](0002-ai-image-labels.md)
 
 ---
 
@@ -211,9 +211,9 @@ flowchart LR
 
 ## Documentação
 
-- [SHARDSPHERE-FLOWS.md](../SHARDSPHERE-FLOWS.md) — cada processo, fluxo a fluxo.
-- [WALKTHROUGH-60MB.md](../WALKTHROUGH-60MB.md) — passo a passo de um arquivo de 60MB, com os JSONs.
-- [0001-index-scale.md](../0001-index-scale.md) · [0002-ai-image-labels.md](../0002-ai-image-labels.md) — decisões de arquitetura.
-- [SHARDSPHERE-PROJECT.md](../SHARDSPHERE-PROJECT.md) — tese e decisões.
+- [SHARDSPHERE-FLOWS.md](SHARDSPHERE-FLOWS.md) — cada processo, fluxo a fluxo.
+- [WALKTHROUGH-60MB.md](WALKTHROUGH-60MB.md) — passo a passo de um arquivo de 60MB, com os JSONs.
+- [0001-index-scale.md](0001-index-scale.md) · [0002-ai-image-labels.md](0002-ai-image-labels.md) — decisões de arquitetura.
+- [SHARDSPHERE-PROJECT.md](SHARDSPHERE-PROJECT.md) — tese e decisões.
 
 <sub>🤖 Diagramas em Mermaid (o GitHub renderiza). Prints da UI podem entrar depois.</sub>
